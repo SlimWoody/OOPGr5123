@@ -1,21 +1,34 @@
-/* 
- * Создал класс HotDrink и наследовал его от Bottle.
-*/
+/**
+ * @autor Лузин Павел
+ */
 
 package Domen;
 
-public class HotDrinks extends Bottle {
-    private int drinkTemperature; // Добавил поле ТемператураНапитка(drinkTemperature)
+public class HotDrinks extends Product {
+    /** Поле объем напитка */
+    private float drinkVolume;
 
-    public HotDrinks(String name, int price, float bottleVolume, int drinkTemperature) { //Конструктор HotDrinks
-        super(name, price, bottleVolume);
+    /** Поле температура напитка */
+    private int drinkTemperature;
+
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     * 
+     * @param name             - имя
+     * @param price            - цена
+     * @param drinkVolume      - объем напитка
+     * @param drinkTemperature - температура напитка
+     * @see HotDrinks#HotDrinks()
+     */
+    public HotDrinks(String name, int price, float drinkVolume, int drinkTemperature) {
+        super(name, price);
+        this.drinkVolume = drinkVolume;
         this.drinkTemperature = drinkTemperature;
 
-        if(bottleVolume>0.24){
-            this.bottleVolume = bottleVolume;   // Проверка объема HotDrinks
-        }
-        else{
-            this.bottleVolume = (float) 0.25;
+        if (drinkTemperature > 29) {
+            this.drinkTemperature = drinkTemperature; // Проверка объема HotDrinks
+        } else {
+            this.drinkTemperature = 30;
         }
 
         if(drinkTemperature>30){
@@ -24,6 +37,14 @@ public class HotDrinks extends Bottle {
         else{
             this.drinkTemperature = 31;
         }
+    }
+
+    public float getDrinkVolume() {
+        return drinkVolume;
+    }
+
+    public void setDrinkVolume(float drinkVolume) {
+        this.drinkVolume = drinkVolume;
     }
 
     public int getDrinkTemperature() {
@@ -36,9 +57,7 @@ public class HotDrinks extends Bottle {
 
     @Override
     public String toString(){
-        return super.toString() + " drink temperature " + drinkTemperature + ";"; // Переопределил метод toString.
+        return super.toString() + " drink volume " + drinkVolume + ";" + " drink temperature " + drinkTemperature + ";"; // Переопределил метод toString.
     }
     
-
 }
-    

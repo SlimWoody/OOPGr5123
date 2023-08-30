@@ -17,6 +17,9 @@ public class Product {
         }
     }
 
+    public Product(String name2, int price2, float drinkVolume) {
+    }
+
     public String getName() {
         return name;
     }

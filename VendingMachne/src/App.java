@@ -15,14 +15,14 @@ public class App {
         Product item1 = new Product("Lays", 100);
         Product item2 = new Product("Cola", 50);
         Product item3 = new Bottle("Mineral water", 101,(float)1.5);
-        Product item4 = new HotDrinks("Coffee", 120, (float)0.3, 90); /*Добавил в автомат несколько Горячих Напитков(Hot Drinks)*/
-        Product item5 = new HotDrinks("Tea", 70, (float)0.3, 85); /*Добавил в автомат несколько Горячих Напитков(Hot Drinks)*/
+        Product item4 = new HotDrinks("Coffee", 120, (float)0.3, 90); /*Добавил объект item4 - Coffee (Hot Drinks)*/
+        Product item5 = new HotDrinks("Tea", 70, (float)0.3, 85); /*Добавил объект item5 - Tea (Hot Drinks)*/
 
         assort.add(item1);
         assort.add(item2);
         assort.add(item3);
-        assort.add(item4);
-        assort.add(item5);
+        assort.add(item4); // Добавил в автомат
+        assort.add(item5); // Добавил в автомат
 
         Holder hold1 = new Holder(10, 10);
         CoinDispenser disp = new CoinDispenser(120);
