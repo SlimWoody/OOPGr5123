@@ -7,8 +7,8 @@ public class Bottle extends Product {
         super(name, price);
         this.bottleVolume = bottleVolume;
 
-        if (bottleVolume > 0.2) {
-            this.bottleVolume = bottleVolume;
+        if (bottleVolume > 0.4) {
+            this.bottleVolume = bottleVolume; //Проверка объема для Bottle
         }
         else{
             this.bottleVolume = (float) 0.5;
