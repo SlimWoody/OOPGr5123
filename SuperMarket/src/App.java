@@ -1,9 +1,7 @@
-import Classes.Actor;
 import Classes.Market;
 import Classes.OrdinaryClient;
 import Classes.SpecialClient;
 import Classes.TaxInspector;
-// import Classes.TaxInspector;
 import Interfaces.iActorBehaviour;
 
 public class App {
