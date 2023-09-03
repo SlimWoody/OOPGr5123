@@ -3,13 +3,11 @@ package Classes;
 import java.util.List;
 import java.util.ArrayList;
 
-import Interfaces.iActorBehaviour;
+import Interfaces.*;
 
-import Interfaces.iMarketBehaviour;
-import Interfaces.iQueueBehaviour;
 
 public class Market implements iMarketBehaviour, iQueueBehaviour {
-
+    private int auctionCount = 1;
     private List<iActorBehaviour> queue;
 
     public Market() {
@@ -18,20 +16,26 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     @Override
     public void acceptToMarket(iActorBehaviour actor) {
-        System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");
+        if (auctionCount <= AuctionClient.getAuctionClientCount()){
+            System.out.println(actor.getActor().getName() + " the customer came to the store " + "Gets into the action First Seven!");
+        }
+        else{
+            System.out.println(actor.getActor().getName() + " the customer came to the store " + "Does not participate in promotion"); 
+        }
+        auctionCount++;
         takeInQueue(actor);
     }
 
     @Override
     public void takeInQueue(iActorBehaviour actor) {
         this.queue.add(actor);
-        System.out.println(actor.getActor().getName() + " клиент добавлен в очередь ");
+        System.out.println(actor.getActor().getName() + " client added to queue ");
     }
 
     @Override
     public void releaseFromMarket(List<Actor> actors) {
         for (Actor actor : actors) {
-            System.out.println(actor.getName() + " клиент ушел из магазина ");
+            System.out.println(actor.getName() + " the customer left the store ");
             queue.remove(actor);
         }
 
@@ -49,7 +53,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         for (iActorBehaviour actor : queue) {
             if (actor.isMakeOrder()) {
                 actor.setTakeOrder(true);
-                System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
+                System.out.println(actor.getActor().getName() + " the customer received his order ");
             }
         }
 
@@ -61,7 +65,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         for (iActorBehaviour actor : queue) {
             if (actor.isTakeOrder()) {
                 releaseActors.add(actor.getActor());
-                System.out.println(actor.getActor().getName() + " клиент ушел из очереди ");
+                System.out.println(actor.getActor().getName() + " customer left the queue ");
             }
         }
         releaseFromMarket(releaseActors);
@@ -72,7 +76,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         for (iActorBehaviour actor : queue) {
             if (!actor.isMakeOrder()) {
                 actor.setMakeOrder(true);
-                System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
+                System.out.println(actor.getActor().getName() + " the customer placed an order ");
 
             }
         }
