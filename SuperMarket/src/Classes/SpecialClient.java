@@ -50,12 +50,12 @@ public class SpecialClient extends Actor implements iReturnOrder {
     }
 
     @Override
-    public boolean haveCheck() {
+    public boolean goodsСheck() {
         return false;
     }
 
     @Override
-    public boolean returnable() {
+    public boolean returnGoods() {
         return false;
     }
 

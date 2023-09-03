@@ -1,12 +1,26 @@
-package Classes;
+/**
+ * @autor Лузин Павел
+ */
 
+package Classes;
 import Interfaces.iReturnOrder;
 
 public class AuctionClient extends Actor implements iReturnOrder {
+    /** Поле название акции */
     private String auctionName;
+    /** Поле Аукционный айди клиента */
     private int auctionClientID = 1;
+     /** Поле Количество клиентов в акции */
     private static int auctionClientCount = 7;
 
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     * 
+     * @param name  - имя
+     * @param auctionName  - название акции
+     * @param clientID     - количество клиентов в акции
+     * @see AuctionClient#AuctionClient()
+     */
     public AuctionClient(String name, String auctionName, int clientID) {
         super(name);
         this.auctionName = auctionName;
@@ -22,7 +36,6 @@ public class AuctionClient extends Actor implements iReturnOrder {
     }
 
     public int getAuctionClientID() {
-        auctionClientID++;
         return auctionClientID;
     }
 
@@ -75,13 +88,12 @@ public class AuctionClient extends Actor implements iReturnOrder {
     }
 
     @Override
-    public boolean haveCheck() {
+    public boolean goodsСheck() {
         return false;
     }
 
     @Override
-    public boolean returnable() {
+    public boolean returnGoods() {
         return false;
     }
-
 }

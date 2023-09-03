@@ -1,6 +1,7 @@
 package Classes;
+import Interfaces.*;
 
-public class OrdinaryClient extends Actor {
+public class OrdinaryClient extends Actor implements iReturnOrder {
 
     // private boolean isTakenOrder;
     // private boolean isMakeOrder;
@@ -37,5 +38,17 @@ public class OrdinaryClient extends Actor {
     @Override
     public void setName(String name) {
         super.name = name;
+
+        
+    }
+
+    @Override
+    public boolean goodsСheck() {
+        return false;
+    }
+
+    @Override
+    public boolean returnGoods() {
+        return false;
     }
 }

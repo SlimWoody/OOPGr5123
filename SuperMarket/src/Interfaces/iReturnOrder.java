@@ -1,6 +1,14 @@
+/**
+ * @autor Лузин Павел
+ */
+
 package Interfaces;
 
+
+/**
+* Реализует интерфейс для возврата товаров.
+*/
 public interface iReturnOrder {
-    boolean haveCheck();
-    boolean returnable();
+    boolean goodsСheck();
+    boolean returnGoods();
 }
