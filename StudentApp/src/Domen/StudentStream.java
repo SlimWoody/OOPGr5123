@@ -1,13 +1,28 @@
+/**
+ * @autor Лузин Павел
+ * Создал новый класс StudentStream
+ */
+
+
+
 package Domen;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 public class StudentStream implements Iterable<StudentGroup> {
     private List<StudentGroup> stream;
     private Integer idStream;
 
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     * 
+     * @param stream            - поток
+     * @param idStream         - id-потока
+     * @see StudentStream#StudentStream()
+     */
     public StudentStream(List<StudentGroup> stream, Integer idStream) {
         this.stream = stream;
         this.idStream = idStream;
@@ -34,6 +49,9 @@ public class StudentStream implements Iterable<StudentGroup> {
         return "StudentStream. " + "Поток № " + idStream + ": " + stream;
     }
 
+    /**
+     * Переопределил метод toString.
+     */
     @Override
     public Iterator<StudentGroup> iterator() {
         return stream.iterator();

@@ -6,8 +6,17 @@ import java.util.List;
 public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>  {
     private List<Student> group;
     private Integer idGroup;
+    /** Поле размер группы */
     private Integer size;
 
+    /**
+     * Конструктор - создание нового объекта с определенными значениями
+     * 
+     * @param group            - группа
+     * @param idGroup          - id-группы
+     * @param size     - размер группы
+     * @see StudentGroup#StudentGroup()
+     */
     public StudentGroup(List<Student> group, Integer idGroup) {
         this.group = group;
         this.idGroup = idGroup;
@@ -29,6 +38,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     public void setIdGroup(Integer idGroup) {
         this.idGroup = idGroup;
     }
+
 
     @Override
     public String toString() {
@@ -69,6 +79,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
 
     }
 
+    /** Добавил интерфейс */
     @Override
     public int compareTo(StudentGroup o) {
         
