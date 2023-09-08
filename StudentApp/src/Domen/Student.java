@@ -36,15 +36,10 @@ public class Student extends Person implements Comparable<Student> {
         }
 
         if(super.getAge()>o.getAge())
-        return 1;
+            return 1;
         else
-        return -1;        
+            return -1;
     }
 
-
-    
-    
-    
 }
-
 

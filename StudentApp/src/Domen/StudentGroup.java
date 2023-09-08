@@ -3,13 +3,15 @@ package Domen;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>  {
     private List<Student> group;
     private Integer idGroup;
+    private Integer size;
 
     public StudentGroup(List<Student> group, Integer idGroup) {
         this.group = group;
         this.idGroup = idGroup;
+        this.size = group.size();
     }
 
     public List<Student> getGroup() {
@@ -28,12 +30,9 @@ public class StudentGroup implements Iterable<Student> {
         this.idGroup = idGroup;
     }
 
-     @Override
+    @Override
     public String toString() {
-        return "StudentGroup{" +
-                "group=" + group +
-                ", idGroup=" + idGroup +
-                '}';
+        return "StudentGroup. " + "Группа № " + idGroup + ", количество студентов - " + group.size() + ": " + group;
     }
 
     // @Override
@@ -52,23 +51,35 @@ public class StudentGroup implements Iterable<Student> {
     //         else
     //         {
     //             return false;
-    //         }            
+    //         }
     //     }
 
     //     @Override
-    //     public Student next() {            
+    //     public Student next() {
     //         return group.get(counter++);
     //     }
-        
+
     //    };
-        
+
     // }
 
-     @Override
+    @Override
     public Iterator<Student> iterator() {
-       return new StudentIterator(group);
-        
+        return new StudentIterator(group);
+
     }
+
+    @Override
+    public int compareTo(StudentGroup o) {
+        
+        if (size == o.size)
+            return 0;
+        else if (size > o.size)
+            return 1;
+        else
+            return -1;
+    }
+
     
     
 }
