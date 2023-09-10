@@ -2,9 +2,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Domen.PersonComporator;
 import Domen.Student;
 import Domen.StudentGroup;
 import Domen.StudentStream;
+import Domen.Teacher;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -101,5 +103,12 @@ public class App {
         for (StudentGroup std : stream1.getStream()) {
             System.out.println(std);
         }
+
+        Teacher t1 = new Teacher("Галина", 55, "Docent");
+        Teacher t2 = new Teacher("Галина", 57, "Docent");
+
+        System.out.println(new PersonComporator<Student>().compare(s1, s3));
+        System.out.println(new PersonComporator<Teacher>().compare(t1, t2));
+
     }
 }
