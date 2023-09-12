@@ -126,26 +126,24 @@ public class App {
         listEmployees1.add(Em2);
         listEmployees1.add(Em3);
 
-
-
-
         System.out.println(new PersonComporator<Student>().compare(s1, s3));
         System.out.println(new PersonComporator<Teacher>().compare(t1, t2));
-        
 
         AccountController controller = new AccountController();
         controller.paySalary(t1, 50000);
 
-        
-        int averageAgeOfStudents = AccountController.averageAge(listStud2 );
-        System.out.println("Средний возраст студентов из группы №4580 - " + averageAgeOfStudents + " лет" );
+        /**
+         * Вывел результат работы класса averageAge на консоль.
+         * 
+         */
+        int averageAgeOfStudents = AccountController.averageAge(listStud2);
+        System.out.println("Средний возраст студентов из группы №4580 - " + averageAgeOfStudents + " лет");
 
-        int averageAgeOfTeachers = AccountController.averageAge(listTeachers1 );
-        System.out.println("Средний возраст учителей - " + averageAgeOfTeachers + " лет" );
+        int averageAgeOfTeachers = AccountController.averageAge(listTeachers1);
+        System.out.println("Средний возраст учителей - " + averageAgeOfTeachers + " лет");
 
         int averageAgeOfEmployee = AccountController.averageAge(listEmployees1);
-        System.out.println("Средний возраст персонала - " + averageAgeOfEmployee + " лет" );
-
+        System.out.println("Средний возраст персонала - " + averageAgeOfEmployee + " лет");
 
     }
 }

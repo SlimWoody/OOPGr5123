@@ -4,7 +4,9 @@ import java.util.List;
 
 import Domen.PersonComporator;
 import Domen.Teacher;
-
+/**
+ * Создал класс TeacherService и реализовал аналогично проделанному на семинаре.
+ */
 public class TeacherService implements iPersonService<Teacher> {
     private int count;
     private List<Teacher> teachers;
@@ -25,6 +27,10 @@ public class TeacherService implements iPersonService<Teacher> {
         teachers.add(teach);
     }
 
+    /**
+     * Добавил метод вывода списка учителей отсортированного
+     * обобщенным классом PersonComparator
+     */
     public void SortByFIO()
     {
         PersonComporator<Teacher> teachComp = new PersonComporator<Teacher>();

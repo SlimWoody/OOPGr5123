@@ -11,6 +11,13 @@ public class AccountController {
         System.out.println(person.getName() + " выплачено зарплата " + salary + "p.");
     }
 
+    /**
+     * 
+     * Разработал обобщенный метод averageAge 
+     * для подсчета среднего возраста студентов,
+     * учителей и работников.
+     * Метод сделал статическим в классе AccountController.
+     */
     public static <T extends Person> int averageAge(List<T> persons)
     {
         int sumAge = 0;
