@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Controllers.AccountController;
+import Domen.Employee;
 import Domen.PersonComporator;
 import Domen.Student;
 import Domen.StudentGroup;
@@ -105,10 +107,45 @@ public class App {
         }
 
         Teacher t1 = new Teacher("Галина", 55, "Docent");
-        Teacher t2 = new Teacher("Галина", 57, "Docent");
+        Teacher t2 = new Teacher("Надежда", 57, "Docent");
+        Teacher t3 = new Teacher("Михаил", 67, "Docent");
+        Teacher t4 = new Teacher("Дмитрий", 83, "Docent");
+
+        List<Teacher> listTeachers1 = new ArrayList<Teacher>();
+        listTeachers1.add(t1);
+        listTeachers1.add(t2);
+        listTeachers1.add(t3);
+        listTeachers1.add(t4);
+
+        Employee Em1 = new Employee("Дмитрий", 49, "Сантехник");
+        Employee Em2 = new Employee("Виталий", 58, "Дворник");
+        Employee Em3 = new Employee("Анна", 38, "Уборщица");
+
+        List<Employee> listEmployees1 = new ArrayList<Employee>();
+        listEmployees1.add(Em1);
+        listEmployees1.add(Em2);
+        listEmployees1.add(Em3);
+
+
+
 
         System.out.println(new PersonComporator<Student>().compare(s1, s3));
         System.out.println(new PersonComporator<Teacher>().compare(t1, t2));
+        
+
+        AccountController controller = new AccountController();
+        controller.paySalary(t1, 50000);
+
+        
+        int averageAgeOfStudents = AccountController.averageAge(listStud2 );
+        System.out.println("Средний возраст студентов из группы №4580 - " + averageAgeOfStudents + " лет" );
+
+        int averageAgeOfTeachers = AccountController.averageAge(listTeachers1 );
+        System.out.println("Средний возраст учителей - " + averageAgeOfTeachers + " лет" );
+
+        int averageAgeOfEmployee = AccountController.averageAge(listEmployees1);
+        System.out.println("Средний возраст персонала - " + averageAgeOfEmployee + " лет" );
+
 
     }
 }
