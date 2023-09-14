@@ -1,7 +1,7 @@
 package Model.Core;
 
 public class Student extends Person  {
-    private int id;
+    private final int id;
     private static int generalId;
 
     public Student(String name, int age) {
@@ -9,7 +9,10 @@ public class Student extends Person  {
         this.id = generalId;
         generalId++;
     }
-
+    public Student(String name, int age, int id){
+        super(name,age);
+        this.id = id;
+    }
 
     public int getId() {
         return id;

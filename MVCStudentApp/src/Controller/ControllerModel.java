@@ -11,8 +11,8 @@ public class ControllerModel {
 
     Map<Integer, iGetModel> numberModel;
 
-    public ControllerModel(List<iGetModel> iGetModel) {
-        numberModel = iGetModel.stream()
+    public ControllerModel(List<iGetModel> iGetModel){
+      numberModel =  iGetModel.stream()
                 .collect(Collectors.toMap(Controller.Interfaces.iGetModel::key, Function.identity()));
 
     }
