@@ -3,20 +3,32 @@ package Model;
 import org.example.Controller.Interfaces.iGetModel;
 
 public class ModelClassHash implements iGetModel {
-    private HashMap<Long, Student> studentHashMap;
+    private final HashMap<Long, Student> studentHashMap = new HashMap<>();
 
-    public void ModelClassMap(HashMap<Long, Student> studentHashMap) {
-        this.studentHashMap = studentHashMap;
-
+    public ModelClassHash(List<Student> students) {
+        for (Student s : students) {
+            studentHashMap.put((long) s.getId(), s);
+        }
     }
-
-    public HashMap<Long, Student> getStudentHashMap() {
-        return studentHashMap;
-    }
-
 
     @Override
     public List<Student> getStudents() {
-        return null;
+        return new ArrayList<>(studentHashMap.values());
+    }
+
+    @Override
+    public boolean delete(int id) {
+        Long l = (long) id;
+        if (studentHashMap.containsKey(l)) {
+            studentHashMap.remove(l);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Integer key() {
+        return 2;
     }
 }

@@ -16,9 +16,15 @@ public class ViewClassEng implements iGetView {
         System.out.println("----------------------------------------");
     }
 
+    @Override
     public String prompt(String msg) {
         Scanner in = new Scanner(System.in);
         System.out.println(msg);
         return in.nextLine();
+    }
+
+    @Override
+    public void sendMessage(String message) {
+
     }
 }

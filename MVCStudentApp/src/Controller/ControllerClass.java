@@ -20,54 +20,43 @@ public class ControllerClass {
         this.view = view;
     }
 
-    private boolean testData(List<Student> studs)
-    {
-        if(studs.size()>0)
-        {
+    private boolean testData(List<Student> studs) {
+        if (studs.size() > 0) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
     public void update() {
 
-        //MVP
+        // MVP
         students = model.getStudents();
 
-        if(testData(students))
-        {
+        if (testData(students)) {
             view.printAllStudent(students);
-        }
-        else{
+        } else {
             System.out.println("Список студентов пуст!");
         }
 
-
         // MVC
-        //view.printAllStudent(model.getStudents());
+        // view.printAllStudent(model.getStudents());
     }
 
-
-    public void run()
-    {
+    public void run() {
         Command com = Command.NONE;
         boolean getNewIter = true;
-        while(getNewIter)
-        {
+        while (getNewIter) {
             String command = view.prompt("Введите команду:");
             com = Command.valueOf(command.toUpperCase());
-            switch(com)
-            {
+            switch (com) {
                 case EXIT:
-                   getNewIter = false;
-                   System.out.println("Выход из программы");
-                   break;
+                    getNewIter = false;
+                    System.out.println("Выход из программы");
+                    break;
                 case LIST:
-                   view.printAllStudent(model.getStudents());
-                   break;
+                    view.printAllStudent(model.getStudents());
+                    break;
             }
         }
     }

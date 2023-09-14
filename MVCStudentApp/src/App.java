@@ -41,7 +41,7 @@ public class App {
         ControllerClass controller = new ControllerClass(modelList, view);
 
        // controller.update();
-       controller.run();
+    controller.run();
 
 
     }
