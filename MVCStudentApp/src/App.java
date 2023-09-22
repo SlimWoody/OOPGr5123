@@ -46,10 +46,10 @@ public class App {
         ControllerModel controllerModel = new ControllerModel(modelList);
         iGetView view = new ViewClass();
 
-       ControllerClass controller = new ControllerClass(controllerModel,view);
+    ControllerClass controller = new ControllerClass(controllerModel,view);
 
        // controller.update();
-       controller.run();
+    controller.run();
 
 
     }
