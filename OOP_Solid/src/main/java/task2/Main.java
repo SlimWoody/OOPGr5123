@@ -1,5 +1,5 @@
 package task2;
-public class MainTwo {
+public class Main {
 
     public static void main(String[] args) {
 
